@@ -1,5 +1,5 @@
 body {
-    background: #f4f7f9;
+    background: linear-gradient(to bottom, #87cefa, #f4f7f9);
     color: #1e293b;
     font-family: 'Sarabun', sans-serif;
     display: flex;
@@ -8,28 +8,36 @@ body {
     min-height: 100vh;
     margin: 0;
 }
+
 .app-container {
-    background: white;
+    background: rgba(255,255,255,0.9);
     padding: 2rem;
     border-radius: 1rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     width: 90%;
-    max-width: 400px;
+    max-width: 420px;
     text-align: center;
 }
-h1 { color: #1d4ed8; }
+
+h1 {
+    color: #1d4ed8;
+    margin-bottom: 1rem;
+}
+
 #search-form {
     display: flex;
     gap: 0.5rem;
-    margin: 1.5rem 0;
+    margin: 1rem 0 2rem;
 }
+
 #city-input {
     flex-grow: 1;
     padding: 0.75rem;
-    border: 1px solid #cbd5e1;
+    border: 2px solid #cbd5e1;
     border-radius: 0.5rem;
     font-size: 1rem;
 }
+
 #search-form button {
     padding: 0.75rem 1rem;
     background-color: #3b82f6;
@@ -38,8 +46,67 @@ h1 { color: #1d4ed8; }
     border-radius: 0.5rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, transform 0.2s;
 }
-#search-form button:hover { background-color: #2563eb; }
-.weather-info { margin-top: 1.5rem; min-height: 150px; }
-.error { color: #dc2626; }
+#search-form button:hover {
+    background-color: #2563eb;
+    transform: scale(1.05);
+}
+
+.weather-info {
+    margin-bottom: 2rem;
+}
+
+.weather-info img {
+    width: 80px;
+    height: 80px;
+}
+
+.weather-temp {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.weather-description {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.forecast-info {
+    margin-top: 1.5rem;
+}
+
+.forecast-day {
+    background: white;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.forecast-day img {
+    width: 50px;
+    height: 50px;
+}
+
+.forecast-day .details {
+    flex: 1;
+    text-align: left;
+    margin-left: 1rem;
+}
+
+.forecast-date {
+    font-weight: bold;
+}
+
+.error {
+    color: #dc2626;
+}
+
+.loading {
+    font-style: italic;
+}
